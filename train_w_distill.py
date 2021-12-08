@@ -95,7 +95,7 @@ def main(_):
         
         ## start training
         train_writer = tf.summary.FileWriter('%s'%FLAGS.train_dir,graph,flush_secs=save_summaries_secs)
-        config = ConfigProto()
+        config = tf.compat.v1.ConfigProto
         config.gpu_options.visible_device_list = gpu_num
         config.gpu_options.allow_growth=True
         
